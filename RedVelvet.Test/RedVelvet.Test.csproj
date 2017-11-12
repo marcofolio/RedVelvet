@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,6 +46,8 @@
     </Compile>
     <Compile Include="Features\mark_as_bought.feature.cs">
       <DependentUpon>mark_as_bought.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Features\AddShoppingItemFeature.cs" />
     <Compile Include="Features\DeleteShoppingItemFeature.cs" />
@@ -63,7 +65,9 @@
     <Compile Include="Steps\StepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Features\add_shopping_item.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>add_shopping_item.feature.cs</LastGenOutput>
@@ -78,12 +82,9 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Features\" />
-    <Folder Include="Screens\" />
-    <Folder Include="Screens\ShoppingItem\" />
-    <Folder Include="Screens\ShoppingList\" />
-    <Folder Include="Steps\" />
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

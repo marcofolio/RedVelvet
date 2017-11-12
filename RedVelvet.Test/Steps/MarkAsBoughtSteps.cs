@@ -15,9 +15,9 @@ namespace RedVelvet.Test
         }
 
         [Then(@"I should see ""(.*)"" marked as (.*) in my shopping list")]
-        public void ThenIShouldSeeItemMarkedAsStateInMyShoppingList(string name, int state)
+        public void ThenIShouldSeeItemMarkedAsStateInMyShoppingList(string name, string state)
         {
-            var expectedState = state == 0 ? false : true;
+            var expectedState = state.ToLowerInvariant().Equals("bought") ? true : false;
             var bougth = app.Query(x => x.Marked(name).Parent().Class("ViewCellRenderer_ViewCellContainer").Child().Class("ImageRenderer")).Length == 2;
 
             Assert.AreEqual(expectedState, bougth);

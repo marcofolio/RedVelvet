@@ -9,8 +9,8 @@ Scenario Outline: Mark as bought
     Then I should see <item> marked as <state> in my shopping list
 
     Examples:
-        |  item                     |  state |
-        | "250g plain flour"        | 1      |
-        | "40g cocoa powder"        | 1      |
-        | "300g granulated sugar"   | 0      |
-        | "400g icing sugar"        | 1      |
+        | item                    | state      |
+        | "250g plain flour"      | Bought     |
+        | "40g cocoa powder"      | Bought     |
+        | "300g granulated sugar" | Not bought |
+        | "400g icing sugar"      | Bought     |

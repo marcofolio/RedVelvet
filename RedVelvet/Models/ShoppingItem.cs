@@ -1,5 +1,5 @@
 ﻿using System;
-namespace RedVelvet
+namespace RedVelvet.Models
 {
     public class ShoppingItem
     {

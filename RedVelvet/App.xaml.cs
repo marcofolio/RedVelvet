@@ -1,4 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using RedVelvet.Data;
+using RedVelvet.Views;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace RedVelvet
 {
@@ -10,12 +14,16 @@ namespace RedVelvet
         {
             InitializeComponent();
 
-            Resources = new ResourceDictionary();
-            Resources.Add("primaryRed", Color.FromHex("b51919"));
+            Resources = new ResourceDictionary
+            {
+                { "primaryRed", Color.FromHex("b51919") }
+            };
 
-            var nav = new NavigationPage(new ShoppingListPage());
-            nav.BarBackgroundColor = (Color)App.Current.Resources["primaryRed"];
-            nav.BarTextColor = Color.White;
+            var nav = new NavigationPage(new ShoppingListPage())
+            {
+                BarBackgroundColor = (Color)App.Current.Resources["primaryRed"],
+                BarTextColor = Color.White
+            };
 
             MainPage = nav;
         }
@@ -34,17 +42,14 @@ namespace RedVelvet
 
         protected override void OnStart()
         {
-            // Handle when your app starts
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
         }
     }
 }

@@ -2,8 +2,9 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using RedVelvet.Models;
 
-namespace RedVelvet
+namespace RedVelvet.Data
 {
     public class ShoppingItemDatabase
     {

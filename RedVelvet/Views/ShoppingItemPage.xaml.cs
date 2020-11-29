@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using RedVelvet.Models;
 using Xamarin.Forms;
 
-namespace RedVelvet
+namespace RedVelvet.Views
 {
     public partial class ShoppingItemPage : ContentPage
     {
